@@ -3,7 +3,18 @@
 
 # Defining the source directory # 
 
-setwd("D:/Dati/Profili/h020650/Desktop/DATA_SCIENCE_BI/AUTODIDATTICI/02_DATA_CLEANING/PROJECT/UCI_HAR_Datasets")
+zip_url <- "https://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip"
+zip_file <- "dataset.zip"
+
+if (!file.exists(zip_file)) {
+  download.file(zip_url, zip_file)
+}
+
+if (!file.exists("data")) {
+  unzip(zip_file, exdir = "data")
+}
+
+data_path <- "data/UCI HAR Dataset"
 
 # Pre-requisite #
 
